@@ -11,14 +11,14 @@ class MinimalService(Node):
         self.srv = self.create_service(AddTwoInts, 'add_two_ints', self.add_two_ints_callback)
 
     def add_two_ints_callback(self, request, response):
-        response.sum = request.a + request.b
-        self.get_logger().info('Incoming request\na: %d b: %d' % (request.a, request.b))
+        response.sum = request.a
+        self.get_logger().info('Incoming request a: %d' % (request.a))
 
         return response
 
 
-def main(args=None):
-    rclpy.init(args=args)
+def main():
+    rclpy.init()
 
     minimal_service = MinimalService()
 
