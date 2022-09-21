@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'py_srvcli'
+package_name = 'py_pubsub'
 
 setup(
     name=package_name,
@@ -13,15 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='lucas',
-    maintainer_email='lucas@todo.todo',
+    maintainer='joost',
+    maintainer_email='j.moerkerken@student.han.nl',
     description='TODO: Package description',
-    license='TODO: License declaration',
+    license='Apache License 2.0',
     tests_require=['pytest'],
-entry_points={
-    'console_scripts': [
-        'service = py_srvcli.service_member_function:main',
-        'client_subscriber = py_srvcli.client_subscriber:main',
-    ],
-},
+    entry_points={
+        'console_scripts': [
+            'talker = py_pubsub.publisher_member_function:main',
+        ],
+    },
 )
